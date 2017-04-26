@@ -1,0 +1,87 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/sanitize.css/2.0.0/sanitize.min.css');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300');
+
+$bg-color: #202a67;
+$fg-color: #fdd001;
+$hd-color: #ffffff;
+
+$sizing: (
+    xs: 32rem,
+    sm: 48rem,
+    md: 72rem,
+    lg: 96rem,
+    xl: 102rem,
+    xx: 120rem
+);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: $bg-color;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    line-height: 1.33333;
+    color: $hd-color;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 75vh;
+    background-color: $fg-color;
+    @media (min-width: map-get($sizing, sm)) {
+	max-width: map-get($sizing, sm);
+	border-style: solid;
+    }
+    width: 100%;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 0.5rem;
+}
+
+.frame__cap, .frame__seal {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.frame__screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    h1 {
+	color: black;
+	font-size: 2.4rem;
+	text-align: center;
+    }
+}
+
+.frame__main {
+    margin-bottom: -5.0rem;
+}
+
+.frame__cap__bolt, .frame__seal__bolt {
+    img {
+	pointer-events: none;
+    }
+}
